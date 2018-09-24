@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Recursive Functions</title>
+    <style>
+        body {
+            background-color:seashell;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+        h1   {
+            color:coral;
+            margin: 50px auto;
+            font-size: 40px;
+            width: auto;
+            text-align: center;
+        }
+        h2   {
+            color: red;
+            margin: 20px auto;
+            font-size: 50px;
+            width: auto;
+            text-align: center;
+            border-bottom:red 1px dashed;
+        }
+        form   {
+            color: orange;
+            margin: 50px auto;
+            font-size: 30px;
+            width: auto;
+            text-align: center;
+        }
+        .equation{
+            width: 400px;
+            font-size: 20px;
+            padding: 10px 5px;
+            border:lightslategray 1px solid;
+        }
+        .calculate{
+            width: 200px;
+            font-size: 20px;
+            padding: 10px 5px;
+            font-weight: bold;
+            background-color:coral;
+            color:seashell;
+            border:lightslategray 1px solid;
+        }
+        </style>
+  </head>
+  <body>
+    <h1>RECURSIVE FUNCTIONS</h1>
+    {% block content %}
+    <form action="." method="POST" name="Input">{% csrf_token %}
+        <input class="equation" type="text" name="text" onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Leave empty spaces between items.'"
+        placeholder="Leave empty spaces between items.">
+        <input class="calculate" type="submit" value="CALCULATE">
+    </form>
+    <h2>
+        {{ calculated_value }}
+    </h2>
+    {% endblock %}
+  </body>
+</html>
